@@ -1,0 +1,11 @@
+c:\users\omer\documents\visual studio 2015\Projects\MyProject\MyProject\bin\Debug\MyProject.pdb
+c:\users\omer\documents\visual studio 2015\Projects\MyProject\MyProject\bin\Debug\WebDriver.dll
+c:\users\omer\documents\visual studio 2015\Projects\MyProject\MyProject\bin\Debug\WebDriver.Support.dll
+c:\users\omer\documents\visual studio 2015\Projects\MyProject\MyProject\bin\Debug\WebDriver.xml
+c:\users\omer\documents\visual studio 2015\Projects\MyProject\MyProject\bin\Debug\WebDriver.Support.xml
+c:\users\omer\documents\visual studio 2015\Projects\MyProject\MyProject\obj\Debug\MyProject.csprojResolveAssemblyReference.cache
+c:\users\omer\documents\visual studio 2015\Projects\MyProject\MyProject\obj\Debug\MyProject.pdb
+c:\users\omer\documents\visual studio 2015\Projects\MyProject\MyProject\bin\Debug\MyProject.exe
+c:\users\omer\documents\visual studio 2015\Projects\MyProject\MyProject\obj\Debug\MyProject.exe
+c:\users\omer\documents\visual studio 2015\Projects\MyProject\MyProject\bin\Debug\nunit.framework.dll
+c:\users\omer\documents\visual studio 2015\Projects\MyProject\MyProject\bin\Debug\nunit.framework.xml
