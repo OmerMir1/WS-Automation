@@ -1,18 +1,14 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using OpenQA.Selenium.Support.UI;
 
 namespace MyProject
 {
     public static class SetMethod_Ext
     {
 
-        public static void EnterText(IWebElement element, string value)    //Custom mehtods start, using a keyword this can turn these custom mthods in to extesnion methods of Iwebelemt wherein u can call the method as say _employeeFN.entertext instead of sendkeys.
+        public static void EnterText(IWebElement element, int value)    //Custom mehtods start, using a keyword this can turn these custom mthods in to extesnion methods of Iwebelemt wherein u can call the method as say _employeeFN.entertext instead of sendkeys.
         {
-            element.SendKeys(value);
+            element.SendKeys(value.ToString());
         }
 
 
@@ -21,9 +17,21 @@ namespace MyProject
             element.Click();
         }
 
+        public static void SelectFromDD(IWebElement element)    //Custom mehtods start, using a keyword this can turn these custom mthods in to extesnion methods of Iwebelemt wherein u can call the method as say _employeeFN.entertext instead of sendkeys.
+        {
+            SelectElement Sel = new SelectElement(element);
+            Sel.SelectByIndex(4);
+        }
+
+
         public static void SwitchToFrame()
         {
             BasePage.driver.SwitchTo().Frame("f1");
-        }                                                              //Custom mehtods end
+
+        }
+        public static void SwitchOutOfFrame()
+        {
+            BasePage.driver.SwitchTo().DefaultContent();
+        }      
     }
 }

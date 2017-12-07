@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Support.PageObjects;
 using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace MyProject
 {
@@ -9,7 +10,7 @@ namespace MyProject
     public class Employee
     
         {
-            [FindsBy(How = How.Id, Using = "tab_employee")]
+           [FindsBy(How = How.Id, Using = "tab_employee")]
             public IWebElement _employee { get; set; }
 
             [FindsBy(How = How.Id, Using = "lnkNew")]
@@ -31,7 +32,7 @@ namespace MyProject
 
 
 
-        [FindsBy(How = How.Id, Using = "txtEmpBR")]
+            [FindsBy(How = How.Id, Using = "txtEmpBR")]
             public IWebElement _employeeBR { get; set; }
 
 
@@ -49,20 +50,26 @@ namespace MyProject
             }
 
             [TestMethod]
-            public void empclick()
+            public void CreateNewEmp()
             {
 
             SetMethod_Ext.Clicks(_employee);                   //Custom mehtods start
             SetMethod_Ext.SwitchToFrame();
             SetMethod_Ext.Clicks(_employeenew);
 
-            SetMethod_Ext.EnterText(_employeeID, "100");
-            SetMethod_Ext.EnterText(_employeeFN, "1");
-            SetMethod_Ext.EnterText(_employeeLN, "1");
+            SetMethod_Ext.EnterText(_employeeID, RandomGen.RandomG());
+            SetMethod_Ext.EnterText(_employeeFN, RandomGen.RandomG());
+            SetMethod_Ext.EnterText(_employeeLN, RandomGen.RandomG());
             SetMethod_Ext.Clicks(_RateTab);
-            SetMethod_Ext.EnterText(_employeeBR, "1");
-            SetMethod_Ext.EnterText(_employeeCR, "1");
+            SetMethod_Ext.EnterText(_employeeBR, RandomGen.RandomG());
+            SetMethod_Ext.EnterText(_employeeCR, RandomGen.RandomG());
             SetMethod_Ext.Clicks(_employeeSave);                   //Custom mehtods end
+
+
+
+
+
+
 
 
             //    _employee.Click();

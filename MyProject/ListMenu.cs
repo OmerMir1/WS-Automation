@@ -35,7 +35,7 @@ namespace MyProject
         }
 
         [TestMethod]
-        public void hoveronmenuitems()
+        public static void hoveronmenuitems()
         {
             ListMenu List = new ListMenu();
             Actions Hoover = new Actions(BasePage.driver);

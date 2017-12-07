@@ -16,13 +16,17 @@ namespace MyProject
             BasePage.driver.Navigate().GoToUrl("http://demo.billquick.com");
             Login element = new Login();
             element.LogIn();
-            
-            ListMenu list = new ListMenu();
-            list.hoveronmenuitems();
+
+            ListMenu.hoveronmenuitems();
             Thread.Sleep(800);
 
             Employee empl = new Employee();
-            empl.empclick();
+            empl.CreateNewEmp();
+
+
+
+            Client Cli = new Client();
+            Cli.CreateNewClient();
 
 
 
