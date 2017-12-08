@@ -21,12 +21,14 @@ namespace MyProject
             Thread.Sleep(800);
 
             Employee empl = new Employee();
+            
             empl.CreateNewEmp();
+            string EID = empl._employeeID.GetAttribute("Value");
 
 
 
             Client Cli = new Client();
-            Cli.CreateNewClient();
+            Cli.CreateNewClient(EID);
 
 
 

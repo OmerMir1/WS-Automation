@@ -54,10 +54,11 @@ namespace MyProject
             {
 
             SetMethod_Ext.Clicks(_employee);                   //Custom mehtods start
-            SetMethod_Ext.SwitchToFrame();
+            BasePage.driver.SwitchTo().Frame("f1");
             SetMethod_Ext.Clicks(_employeenew);
 
             SetMethod_Ext.EnterText(_employeeID, RandomGen.RandomG());
+           
             SetMethod_Ext.EnterText(_employeeFN, RandomGen.RandomG());
             SetMethod_Ext.EnterText(_employeeLN, RandomGen.RandomG());
             SetMethod_Ext.Clicks(_RateTab);

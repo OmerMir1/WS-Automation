@@ -24,14 +24,6 @@ namespace MyProject
         }
 
 
-        public static void SwitchToFrame()
-        {
-            BasePage.driver.SwitchTo().Frame("f1");
-
-        }
-        public static void SwitchOutOfFrame()
-        {
-            BasePage.driver.SwitchTo().DefaultContent();
-        }      
+       
     }
 }
