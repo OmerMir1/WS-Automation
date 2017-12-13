@@ -21,7 +21,7 @@ namespace MyProject
             Thread.Sleep(800);
 
             Employee empl = new Employee();
-            
+
             empl.CreateNewEmp();
             string EID = empl._employeeID.GetAttribute("Value");
 
@@ -29,7 +29,12 @@ namespace MyProject
 
             Client Cli = new Client();
             Cli.CreateNewClient(EID);
+            string CLID = Cli._ClientID.GetAttribute("value");
 
+
+            Project Pro = new Project();
+            Pro.CreateNewProject(CLID, EID);
+           
 
 
             BasePage.driver.Quit();

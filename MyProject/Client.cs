@@ -9,6 +9,8 @@ namespace MyProject
     [TestClass]
     public class Client
         {
+
+
         [FindsBy(How = How.Id, Using = "tab_client")]
         public IWebElement _Client { get; set; }
 
