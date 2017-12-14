@@ -44,10 +44,10 @@ namespace MyProject
             //Thread.Sleep(1000);
            // Hoover.MoveToElement(List._List).Build().Perform();
 
-            Hoover.MoveToElement(List._Time).Build().Perform();
-            Thread.Sleep(1001);
-            //Hoover.MoveToElement(List._Expense).Build().Perform();
-            //Thread.Sleep(1002);
+           // Hoover.MoveToElement(List._Time).Build().Perform();
+            //Thread.Sleep(1001);
+           Hoover.MoveToElement(List._Expense).Build().Perform();
+          //Thread.Sleep(1002);
 
         }
 

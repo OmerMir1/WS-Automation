@@ -38,8 +38,11 @@ namespace MyProject
             // Pro.CreateNewProject();
             //Pro.CreateNewProject(CLID, EID);    Get the Client ID property value to pass that on to Project.
 
-            TimeEntry TE = new TimeEntry();
-            TE.CreateNewTimeEntry();
+            // TimeEntry TE = new TimeEntry();
+            //  TE.CreateNewTimeEntry();
+
+            ExpenseLog EL = new ExpenseLog();
+            EL.CreateNewExpenseEntry();
 
             BasePage.driver.Quit();
         }
