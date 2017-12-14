@@ -3,6 +3,7 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.PageObjects;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Threading;
 
 namespace MyProject
 {
@@ -41,10 +42,10 @@ namespace MyProject
             Actions Hoover = new Actions(BasePage.driver);
             //Hoover.MoveToElement(List._Home).Build().Perform();
             //Thread.Sleep(1000);
-            Hoover.MoveToElement(List._List).Build().Perform();
+           // Hoover.MoveToElement(List._List).Build().Perform();
 
-            //Hoover.MoveToElement(List._Time).Build().Perform();
-            //Thread.Sleep(1001);
+            Hoover.MoveToElement(List._Time).Build().Perform();
+            Thread.Sleep(1001);
             //Hoover.MoveToElement(List._Expense).Build().Perform();
             //Thread.Sleep(1002);
 

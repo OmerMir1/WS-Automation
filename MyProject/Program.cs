@@ -20,22 +20,26 @@ namespace MyProject
             ListMenu.hoveronmenuitems();
             Thread.Sleep(800);
 
-            Employee empl = new Employee();
+            //Employee empl = new Employee();
 
-            empl.CreateNewEmp();
-            string EID = empl._employeeID.GetAttribute("Value");
-
-
-
-            Client Cli = new Client();
-            Cli.CreateNewClient(EID);
-            string CLID = Cli._ClientID.GetAttribute("value");
+            //empl.CreateNewEmp();
+            //string EID = empl._employeeID.GetAttribute("Value");  Get the Emp ID property value to pass that on to cleint and project.
 
 
-            Project Pro = new Project();
-            Pro.CreateNewProject(CLID, EID);
-           
 
+            //Client Cli = new Client();
+            // Cli.CreateNewClient();
+
+            // Cli.CreateNewClient(EID);          Fucntion call to Create a client with Emp ID passed for cleint manager
+            //string CLID = Cli._ClientID.GetAttribute("value");
+
+
+            //Project Pro = new Project();
+            // Pro.CreateNewProject();
+            //Pro.CreateNewProject(CLID, EID);    Get the Client ID property value to pass that on to Project.
+
+            TimeEntry TE = new TimeEntry();
+            TE.CreateNewTimeEntry();
 
             BasePage.driver.Quit();
         }

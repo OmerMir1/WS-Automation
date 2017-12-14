@@ -71,7 +71,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Project.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Employee.cs" />
@@ -81,6 +80,8 @@
     <Compile Include="CustomMethods.cs" />
     <Compile Include="SetMethod_Ext.cs" />
     <Compile Include="Client.cs" />
+    <Compile Include="Project.cs" />
+    <Compile Include="TimeEntry.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
