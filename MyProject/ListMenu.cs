@@ -1,7 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.PageObjects;
-
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading;
 
@@ -13,21 +12,17 @@ namespace MyProject
         [FindsBy(How = How.Id, Using = "ts_home")]
         public IWebElement _Home { get; set; }
 
-
         [FindsBy(How = How.Id, Using = "btnlist")]
         public IWebElement _List { get; set; }
-
 
         [FindsBy(How = How.Id, Using = "ts_time")]
         public IWebElement _Time { get; set; }
 
-
-
         [FindsBy(How = How.Id, Using = "ts_expense")]
         public IWebElement _Expense { get; set; }
 
-
-
+        [FindsBy(How = How.Id, Using = "btnbilling")]
+        public IWebElement _Billing { get; set; }
 
 
         public ListMenu()
@@ -46,8 +41,9 @@ namespace MyProject
 
            // Hoover.MoveToElement(List._Time).Build().Perform();
             //Thread.Sleep(1001);
-           Hoover.MoveToElement(List._Expense).Build().Perform();
-          //Thread.Sleep(1002);
+           //Hoover.MoveToElement(List._Expense).Build().Perform();
+            //Thread.Sleep(1002);
+            Hoover.MoveToElement(List._Billing).Build().Perform();
 
         }
 

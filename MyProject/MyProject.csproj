@@ -83,6 +83,7 @@
     <Compile Include="Project.cs" />
     <Compile Include="TimeEntry.cs" />
     <Compile Include="ExpenseLog.cs" />
+    <Compile Include="BillingReview.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

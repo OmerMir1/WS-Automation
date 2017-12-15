@@ -41,8 +41,12 @@ namespace MyProject
             // TimeEntry TE = new TimeEntry();
             //  TE.CreateNewTimeEntry();
 
-            ExpenseLog EL = new ExpenseLog();
-            EL.CreateNewExpenseEntry();
+            // ExpenseLog EL = new ExpenseLog();
+            // EL.CreateNewExpenseEntry();
+
+
+            BillingReview BR = new BillingReview();
+            BR.CreateNewInvoice();
 
             BasePage.driver.Quit();
         }
