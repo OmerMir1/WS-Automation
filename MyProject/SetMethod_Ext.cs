@@ -1,5 +1,7 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
+using System.Threading;
 
 namespace MyProject
 {
@@ -23,6 +25,14 @@ namespace MyProject
             Sel.SelectByIndex(4);
         }
 
+        public static void Hoover(IWebElement hoveron, IWebElement elementtoclick)
+        {
+            BasePage.driver.SwitchTo().DefaultContent();
+            Actions Hov = new Actions(BasePage.driver);
+            Hov.MoveToElement(hoveron).Build().Perform();
+            Thread.Sleep(1000);
+            elementtoclick.Click();
+        }
 
        
     }

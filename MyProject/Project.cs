@@ -51,9 +51,6 @@ namespace MyProject
             [TestMethod]
             public void CreateNewProject()
             {
-                BasePage.driver.SwitchTo().DefaultContent();
-                ListMenu.hoveronmenuitems();
-                Thread.Sleep(2000);
                 SetMethod_Ext.Clicks(_ProjectTab);
                 BasePage.driver.SwitchTo().Frame("f1");
                 SetMethod_Ext.Clicks(_ProjectNew);

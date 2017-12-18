@@ -35,9 +35,7 @@ namespace MyProject
         public void CreateNewClient()
 
         {
-            BasePage.driver.SwitchTo().DefaultContent();
-            ListMenu.hoveronmenuitems();
-            Thread.Sleep(800);
+            
             SetMethod_Ext.Clicks(_Client);
             BasePage.driver.SwitchTo().Frame("f1");
             SetMethod_Ext.Clicks(_ClientNew);

@@ -61,8 +61,7 @@ namespace MyProject
         [TestMethod]
         public void CreateNewTimeEntry()
         {
-            BasePage.driver.SwitchTo().DefaultContent();
-            ListMenu.hoveronmenuitems();            
+                       
             SetMethod_Ext.Clicks(_TimeEntryTab);
             BasePage.driver.SwitchTo().Frame("f1");
             SetMethod_Ext.Clicks(_TENew);

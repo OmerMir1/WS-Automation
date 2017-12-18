@@ -30,22 +30,7 @@ namespace MyProject
             PageFactory.InitElements(BasePage.driver, this);
         }
 
-        [TestMethod]
-        public static void hoveronmenuitems()
-        {
-            ListMenu List = new ListMenu();
-            Actions Hoover = new Actions(BasePage.driver);
-            //Hoover.MoveToElement(List._Home).Build().Perform();
-            //Thread.Sleep(1000);
-           // Hoover.MoveToElement(List._List).Build().Perform();
-
-           // Hoover.MoveToElement(List._Time).Build().Perform();
-            //Thread.Sleep(1001);
-           //Hoover.MoveToElement(List._Expense).Build().Perform();
-            //Thread.Sleep(1002);
-            Hoover.MoveToElement(List._Billing).Build().Perform();
-
-        }
+      
 
     }
 }

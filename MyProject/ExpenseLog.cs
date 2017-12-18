@@ -66,8 +66,6 @@ namespace MyProject
         [TestMethod]
         public void CreateNewExpenseEntry()
         {
-            BasePage.driver.SwitchTo().DefaultContent();
-            ListMenu.hoveronmenuitems();
             SetMethod_Ext.Clicks(_ExpenseLogTab);
             BasePage.driver.SwitchTo().Frame("f1");
             SetMethod_Ext.Clicks(_ELNew);

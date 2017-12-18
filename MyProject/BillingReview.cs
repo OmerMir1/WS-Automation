@@ -6,6 +6,7 @@ using System.Threading;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Interactions;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MyProject
 {
@@ -58,7 +59,7 @@ namespace MyProject
         [FindsBy(How = How.Id, Using = "gridBR_ctl02_chkBill")]
         public IWebElement BRBillChkBox { get; set; }
 
-        [FindsBy(How = How.Id, Using = "lnkProcessOption")]
+        [FindsBy(How = How.XPath, Using = ".//*[@id='lnkProcessOption']/i")]
         public IWebElement BRClickOnProcess { get; set; }
 
         [FindsBy(How = How.Id, Using = "lnkProcess")]
@@ -74,12 +75,8 @@ namespace MyProject
         [TestMethod]
         public void CreateNewInvoice()
         {
-            BasePage.driver.SwitchTo().DefaultContent();
-            ListMenu.hoveronmenuitems();
             SetMethod_Ext.Clicks(BRTab);
-            BasePage.driver.SwitchTo().Frame("f1");
-
-            // SetMethod_Ext.Clicks(BRViewBy);
+            BasePage.driver.SwitchTo().Frame("f1");           
             SelectElement ViewBy = new SelectElement(BRViewBy);
             ViewBy.SelectByIndex(1);
             SetMethod_Ext.Clicks(BRProjectFDD);
@@ -88,39 +85,40 @@ namespace MyProject
             SetMethod_Ext.Clicks(BRProjectTDD);
             Thread.Sleep(1500);
             SetMethod_Ext.Clicks(BRProjectSelectSecond);
-            
+            Thread.Sleep(500);
             SelectElement Period = new SelectElement(BRAsOf);
-            Period.SelectByIndex(3);
-           
+            Period.SelectByValue("All");     
+
             SetMethod_Ext.Clicks(BRRefresh);
-            Thread.Sleep(9000);
-            BasePage.driver.SwitchTo().ActiveElement();
-            BasePage.driver.SwitchTo().DefaultContent();
-
-            WebDriverWait wait = new WebDriverWait(BasePage.driver, TimeSpan.FromSeconds(21));
-            wait.Until(ExpectedConditions.AlertIsPresent());
-            IAlert alert = BasePage.driver.SwitchTo().Alert();
-            alert.Accept();
-
-            BasePage.driver.SwitchTo().ActiveElement();
-            IAlert abc = BasePage.driver.SwitchTo().Alert();
-            abc.Accept();
-            
-                       
-            //IWebElement wind = BasePage.driver.FindElement(By.XPath(".//*[@id='conformationFillHiddenAlertModelBox']/div/div/div[@Id='conformationFalseButton']"));
-            //IWebElement wind1 = BasePage.driver.FindElement(By.Id("conformationFalseButton"));
-            //Thread.Sleep(1500);
-            //wind1.Click();
-            //IAlert alert = BasePage.driver.SwitchTo().Alert();
-            //alert.Dismiss();
-            SetMethod_Ext.Clicks(BRDetailsOption);           
-            SetMethod_Ext.Clicks(BRWUDWindowClick);            
+            Thread.Sleep(1501);
+            var CW = BasePage.driver.CurrentWindowHandle;
+            foreach(string window in BasePage.driver.WindowHandles)
+            {
+                BasePage.driver.SwitchTo().Window(window);
+                BasePage.driver.FindElement(By.Id("conformationFalseButton")).Click();
+            }
+            Thread.Sleep(1001);
+            BasePage.driver.SwitchTo().Window(CW);
+            BasePage.driver.SwitchTo().Frame("f1");            
+            SetMethod_Ext.Clicks(BRDetailsOption);
+            SetMethod_Ext.Clicks(BRWUDWindowClick);
+            Thread.Sleep(900);
+            foreach (string window in BasePage.driver.WindowHandles)
+            {
+                BasePage.driver.SwitchTo().Window(window);
+            }
+           
             SetMethod_Ext.Clicks(BRSelectAllToApplyWUD);
-            BREnterWUD.SendKeys("50");           
+            BREnterWUD.SendKeys("50");
             SetMethod_Ext.Clicks(BRWUDUpdate);
             SetMethod_Ext.Clicks(BRCloseWUDWindow);
+            Thread.Sleep(1001);
+            BasePage.driver.SwitchTo().Window(CW);
+            BasePage.driver.SwitchTo().Frame("f1");
             SetMethod_Ext.Clicks(BRBillChkBox);
+           
             SetMethod_Ext.Clicks(BRClickOnProcess);
+            
             SetMethod_Ext.Clicks(BRProcessAsFinal);
 
         }
