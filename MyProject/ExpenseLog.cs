@@ -80,8 +80,17 @@ namespace MyProject
             SetMethod_Ext.Clicks(_ELExpDD);
             Thread.Sleep(1500);
             SetMethod_Ext.Clicks(_ELExp);
+            
             _ELUnits.SendKeys("10");
-            _ELCost.SendKeys("10");
+            Thread.Sleep(5000);
+            _ELCost.Clear();
+            
+         
+
+            //IAlert alert = BasePage.driver.SwitchTo().Alert();
+            //alert.Dismiss();
+            _ELCost.SendKeys("22");
+            
             SetMethod_Ext.Clicks(_ELMore);            
             SetMethod_Ext.Clicks(_ELApproveChkbx);
             Thread.Sleep(1500);

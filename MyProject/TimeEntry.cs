@@ -42,6 +42,10 @@ namespace MyProject
         [FindsBy(How = How.Id, Using = "txtaHours")]
         public IWebElement _TEAHours { get; set; }
 
+        //[FindsBy(How = How.Id, Using = "chkBillable")]
+        //public IWebElement _TEBillable { get; set; }
+        
+
         [FindsBy(How = How.XPath, Using = ".//*[@id='lblMore']")]
         public IWebElement _TEMore { get; set; }
 
@@ -77,6 +81,13 @@ namespace MyProject
             Thread.Sleep(1500);
             SetMethod_Ext.Clicks(_TEAct);
             _TEAHours.SendKeys("10");
+            IWebElement element = BasePage.driver.FindElement(By.Id("chkBillable"));
+            if (!element.Selected)
+            {
+                element.Click();
+            }
+
+        
             SetMethod_Ext.Clicks(_TEMore);
             Thread.Sleep(1500);
             SetMethod_Ext.Clicks(_TEApproveChkbx);

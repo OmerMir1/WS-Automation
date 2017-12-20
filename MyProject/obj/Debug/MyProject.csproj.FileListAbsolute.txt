@@ -23,4 +23,3 @@ C:\Users\OmEr\documents\visual studio 2015\Projects\MyProject\MyProject\bin\Debu
 C:\Users\OmEr\documents\visual studio 2015\Projects\MyProject\MyProject\bin\Debug\WebDriver.Support.xml
 C:\Users\OmEr\documents\visual studio 2015\Projects\MyProject\MyProject\obj\Debug\MyProject.exe
 C:\Users\OmEr\documents\visual studio 2015\Projects\MyProject\MyProject\obj\Debug\MyProject.pdb
-C:\Users\OmEr\documents\visual studio 2015\Projects\MyProject\MyProject\obj\Debug\MyProject.csprojResolveAssemblyReference.cache
