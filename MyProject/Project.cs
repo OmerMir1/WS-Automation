@@ -43,10 +43,7 @@ namespace MyProject
             [FindsBy(How = How.Id, Using = "lnkSave")]
             public IWebElement _ProjectSave { get; set; }
 
-            public Project()
-            {
-                PageFactory.InitElements(BasePage.driver, this);
-            }
+          
 
             [TestMethod]
             public void CreateNewProject()

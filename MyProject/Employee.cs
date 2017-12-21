@@ -44,10 +44,7 @@ namespace MyProject
             public IWebElement _employeeSave { get; set; }
 
 
-            public Employee()
-            {
-                PageFactory.InitElements(BasePage.driver, this);
-            }
+         
 
             [TestMethod]
             public void CreateNewEmp()

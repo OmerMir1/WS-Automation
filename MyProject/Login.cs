@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace MyProject
 {
     [TestClass]
-    class Login
+    public class Login
     {
         [FindsBy(How = How.Id, Using = "txtID")]
         public IWebElement _username { get; set; }
@@ -19,10 +19,7 @@ namespace MyProject
         public IWebElement _login { get; set; }
 
 
-        public Login()
-        {
-            PageFactory.InitElements(BasePage.driver, this);
-        }
+       
         [TestMethod]
         public void LogIn()
         {

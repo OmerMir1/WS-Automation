@@ -57,10 +57,7 @@ namespace MyProject
         public IWebElement _TESave { get; set; }    
         
         
-             public TimeEntry()
-        {
-            PageFactory.InitElements(BasePage.driver, this);
-        }
+     
 
         [TestMethod]
         public void CreateNewTimeEntry()

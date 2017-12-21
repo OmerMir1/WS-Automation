@@ -58,10 +58,7 @@ namespace MyProject
         public IWebElement _TESave { get; set; }
 
 
-        public ExpenseLog()
-        {
-            PageFactory.InitElements(BasePage.driver, this);
-        }
+       
 
         [TestMethod]
         public void CreateNewExpenseEntry()

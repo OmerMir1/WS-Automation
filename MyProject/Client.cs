@@ -27,10 +27,7 @@ namespace MyProject
         [FindsBy(How = How.Id, Using = "lnkSave")]
         public IWebElement _ClientSave { get; set; }
 
-        public Client()
-        {
-            PageFactory.InitElements(BasePage.driver, this);
-        }
+       
         [TestMethod]
         public void CreateNewClient()
 

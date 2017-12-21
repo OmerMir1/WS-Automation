@@ -59,19 +59,15 @@ namespace MyProject
         [FindsBy(How = How.Id, Using = "gridBR_ctl02_chkBill")]
         public IWebElement BRBillChkBox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//*[@id='lnkProcessOption']/i")]
+        [FindsBy(How = How.Id, Using = "lnkProcessOption")]
         public IWebElement BRClickOnProcess { get; set; }
+        
 
         [FindsBy(How = How.Id, Using = "lnkProcess")]
         public IWebElement BRProcessAsFinal { get; set; }
 
 
-        public BillingReview()
-        {
-            PageFactory.InitElements(BasePage.driver, this);
-        }
-
-
+       
         [TestMethod]
         public void CreateNewInvoice()
         {
@@ -99,7 +95,8 @@ namespace MyProject
             }
             Thread.Sleep(1001);
             BasePage.driver.SwitchTo().Window(CW);
-            BasePage.driver.SwitchTo().Frame("f1");            
+            BasePage.driver.SwitchTo().Frame("f1");
+            Thread.Sleep(550);            
             SetMethod_Ext.Clicks(BRDetailsOption);
             SetMethod_Ext.Clicks(BRWUDWindowClick);
             Thread.Sleep(900);
@@ -116,9 +113,9 @@ namespace MyProject
             BasePage.driver.SwitchTo().Window(CW);
             BasePage.driver.SwitchTo().Frame("f1");
             SetMethod_Ext.Clicks(BRBillChkBox);
-           
-            SetMethod_Ext.Clicks(BRClickOnProcess);
             
+            SetMethod_Ext.Hoover(BRClickOnProcess);
+            Thread.Sleep(3100);
             SetMethod_Ext.Clicks(BRProcessAsFinal);
 
         }

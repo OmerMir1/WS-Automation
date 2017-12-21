@@ -30,10 +30,20 @@ namespace MyProject
             BasePage.driver.SwitchTo().DefaultContent();
             Actions Hov = new Actions(BasePage.driver);
             Hov.MoveToElement(hoveron).Build().Perform();
-            Thread.Sleep(1000);
+            Thread.Sleep(1500);
             elementtoclick.Click();
         }
 
-       
+
+        public static void Hoover(IWebElement hoveron)
+        {
+            BasePage.driver.SwitchTo().DefaultContent();
+            Actions Hov = new Actions(BasePage.driver);
+            Hov.MoveToElement(hoveron).Build().Perform();
+            
+        }
+
+
+
     }
 }

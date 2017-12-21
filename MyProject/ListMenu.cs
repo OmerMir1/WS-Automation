@@ -7,7 +7,7 @@ using System.Threading;
 namespace MyProject
 {
     [TestClass]
-    class ListMenu
+    public class ListMenu
     {
         [FindsBy(How = How.Id, Using = "ts_home")]
         public IWebElement _Home { get; set; }
@@ -25,12 +25,6 @@ namespace MyProject
         public IWebElement _Billing { get; set; }
 
 
-        public ListMenu()
-        {
-            PageFactory.InitElements(BasePage.driver, this);
-        }
-
-      
-
+       
     }
 }

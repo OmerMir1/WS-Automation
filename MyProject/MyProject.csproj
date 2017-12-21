@@ -84,6 +84,7 @@
     <Compile Include="TimeEntry.cs" />
     <Compile Include="ExpenseLog.cs" />
     <Compile Include="BillingReview.cs" />
+    <Compile Include="Pages.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
