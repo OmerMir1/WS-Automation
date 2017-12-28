@@ -77,8 +77,7 @@
     <Compile Include="Login.cs" />
     <Compile Include="ListMenu.cs" />
     <Compile Include="BasePage.cs" />
-    <Compile Include="CustomMethods.cs" />
-    <Compile Include="SetMethod_Ext.cs" />
+    <Compile Include="CustomMehtods.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="TimeEntry.cs" />

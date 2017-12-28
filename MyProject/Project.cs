@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
+using System;
 using System.Threading;
 
 
@@ -48,24 +49,24 @@ namespace MyProject
             [TestMethod]
             public void CreateNewProject()
             {
-                SetMethod_Ext.Clicks(_ProjectTab);
+                CustomMehtods.Clicks(_ProjectTab);
                 BasePage.driver.SwitchTo().Frame("f1");
-                SetMethod_Ext.Clicks(_ProjectNew);
-                SetMethod_Ext.EnterText(_ProjectCode, RandomGen.RandomG());
-                SetMethod_Ext.EnterText(_ProjectName, RandomGen.RandomG());
-                _ProjectClientDD.Click();
-                Thread.Sleep(2000);
-                _ProjectClient.Click();
-                _ProjectManagerDD.Click();
-                Thread.Sleep(2000);
-                _ProjectManager.Click();
+                CustomMehtods.Clicks(_ProjectNew);
+                CustomMehtods.EnterText(_ProjectCode, RandomGen.RandomG());
+                CustomMehtods.EnterText(_ProjectName, RandomGen.RandomG());
 
+                _ProjectClientDD.Click();
+                CustomMehtods.ElementToBeClickableAndClick(_ProjectClient);
+            
+                _ProjectManagerDD.Click();
+                CustomMehtods.ElementToBeClickableAndClick(_ProjectManager);
+            
                 SelectElement Manager = new SelectElement(_ProjectContractType);
                 Manager.SelectByText("Fixed");
 
                 _ProjectContractAmt.Click();
                 _ProjectContractAmt.SendKeys("1000");
-                SetMethod_Ext.Clicks(_ProjectSave);
+                CustomMehtods.Clicks(_ProjectSave);
             }
         }
     }

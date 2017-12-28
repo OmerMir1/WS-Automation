@@ -61,7 +61,9 @@ namespace MyProject
 
         [FindsBy(How = How.Id, Using = "lnkProcessOption")]
         public IWebElement BRClickOnProcess { get; set; }
+
         
+
 
         [FindsBy(How = How.Id, Using = "lnkProcess")]
         public IWebElement BRProcessAsFinal { get; set; }
@@ -71,21 +73,23 @@ namespace MyProject
         [TestMethod]
         public void CreateNewInvoice()
         {
-            SetMethod_Ext.Clicks(BRTab);
-            BasePage.driver.SwitchTo().Frame("f1");           
+            CustomMehtods.Clicks(BRTab);
+            
+            BasePage.driver.SwitchTo().Frame("f1");
+            
             SelectElement ViewBy = new SelectElement(BRViewBy);
             ViewBy.SelectByIndex(1);
-            SetMethod_Ext.Clicks(BRProjectFDD);
+            CustomMehtods.Clicks(BRProjectFDD);
             Thread.Sleep(1500);
-            SetMethod_Ext.Clicks(BRProjectSelect);
-            SetMethod_Ext.Clicks(BRProjectTDD);
-            Thread.Sleep(1500);
-            SetMethod_Ext.Clicks(BRProjectSelectSecond);
+            CustomMehtods.Clicks(BRProjectSelect);
+            CustomMehtods.Clicks(BRProjectTDD);
+            Thread.Sleep(2100);
+            CustomMehtods.Clicks(BRProjectSelectSecond);
             Thread.Sleep(500);
             SelectElement Period = new SelectElement(BRAsOf);
             Period.SelectByValue("All");     
 
-            SetMethod_Ext.Clicks(BRRefresh);
+            CustomMehtods.Clicks(BRRefresh);
             Thread.Sleep(1501);
             var CW = BasePage.driver.CurrentWindowHandle;
             foreach(string window in BasePage.driver.WindowHandles)
@@ -96,27 +100,36 @@ namespace MyProject
             Thread.Sleep(1001);
             BasePage.driver.SwitchTo().Window(CW);
             BasePage.driver.SwitchTo().Frame("f1");
-            Thread.Sleep(550);            
-            SetMethod_Ext.Clicks(BRDetailsOption);
-            SetMethod_Ext.Clicks(BRWUDWindowClick);
+            Thread.Sleep(550);
+            CustomMehtods.Clicks(BRDetailsOption);
+            CustomMehtods.Clicks(BRWUDWindowClick);
             Thread.Sleep(900);
             foreach (string window in BasePage.driver.WindowHandles)
             {
                 BasePage.driver.SwitchTo().Window(window);
             }
-           
-            SetMethod_Ext.Clicks(BRSelectAllToApplyWUD);
+
+            CustomMehtods.Clicks(BRSelectAllToApplyWUD);
             BREnterWUD.SendKeys("50");
-            SetMethod_Ext.Clicks(BRWUDUpdate);
-            SetMethod_Ext.Clicks(BRCloseWUDWindow);
+            CustomMehtods.Clicks(BRWUDUpdate);
+            CustomMehtods.Clicks(BRCloseWUDWindow);
             Thread.Sleep(1001);
             BasePage.driver.SwitchTo().Window(CW);
             BasePage.driver.SwitchTo().Frame("f1");
-            SetMethod_Ext.Clicks(BRBillChkBox);
-            
-            SetMethod_Ext.Hoover(BRClickOnProcess);
-            Thread.Sleep(3100);
-            SetMethod_Ext.Clicks(BRProcessAsFinal);
+            Thread.Sleep(1000);
+            CustomMehtods.Clicks(BRBillChkBox);
+           // BasePage.driver.SwitchTo().Window(CW);
+           // BasePage.driver.SwitchTo().Frame("f1");
+           // Thread.Sleep(1000);
+            CustomMehtods.Hoover(BRClickOnProcess);
+           // SetMethod_Ext.Clicks(BRClickOnProcess);
+            Thread.Sleep(7000);
+            //WebDriverWait wait = new WebDriverWait(BasePage.driver, TimeSpan.FromSeconds(11));
+            //wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("lnkProcessOption")));
+           // SetMethod_Ext.Clicks(BRClickOnProcess);
+           // SetMethod_Ext.Clicks(BRClickOnProcess);
+           // Thread.Sleep(10000);
+            CustomMehtods.Clicks(BRProcessAsFinal);
 
         }
     }

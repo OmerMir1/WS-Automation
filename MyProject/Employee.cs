@@ -50,18 +50,18 @@ namespace MyProject
             public void CreateNewEmp()
             {
 
-            SetMethod_Ext.Clicks(_employee);                   //Custom mehtods start
+            CustomMehtods.Clicks(_employee);                   //Custom mehtods start
             BasePage.driver.SwitchTo().Frame("f1");
-            SetMethod_Ext.Clicks(_employeenew);
+            CustomMehtods.Clicks(_employeenew);
 
-            SetMethod_Ext.EnterText(_employeeID, RandomGen.RandomG());
+            CustomMehtods.EnterText(_employeeID, RandomGen.RandomG());
            
-            SetMethod_Ext.EnterText(_employeeFN, RandomGen.RandomG());
-            SetMethod_Ext.EnterText(_employeeLN, RandomGen.RandomG());
-            SetMethod_Ext.Clicks(_RateTab);
-            SetMethod_Ext.EnterText(_employeeBR, RandomGen.RandomG());
-            SetMethod_Ext.EnterText(_employeeCR, RandomGen.RandomG());
-            SetMethod_Ext.Clicks(_employeeSave);                   //Custom mehtods end
+            CustomMehtods.EnterText(_employeeFN, RandomGen.RandomG());
+            CustomMehtods.EnterText(_employeeLN, RandomGen.RandomG());
+            CustomMehtods.Clicks(_RateTab);
+            CustomMehtods.EnterText(_employeeBR, RandomGen.RandomG());
+            CustomMehtods.EnterText(_employeeCR, RandomGen.RandomG());
+            CustomMehtods.Clicks(_employeeSave);                   //Custom mehtods end
 
 
 

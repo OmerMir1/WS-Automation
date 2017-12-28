@@ -33,10 +33,10 @@ namespace MyProject
 
         {
             
-            SetMethod_Ext.Clicks(_Client);
+            CustomMehtods.Clicks(_Client);
             BasePage.driver.SwitchTo().Frame("f1");
-            SetMethod_Ext.Clicks(_ClientNew);
-            SetMethod_Ext.EnterText(_ClientID, RandomGen.RandomG());
+            CustomMehtods.Clicks(_ClientNew);
+            CustomMehtods.EnterText(_ClientID, RandomGen.RandomG());
             _ClientMgrDD.Click();
             Thread.Sleep(3000);
             _ClientManagerRow.Click();
@@ -44,7 +44,7 @@ namespace MyProject
             IAlert alert = BasePage.driver.SwitchTo().Alert();     //Hanldes the Browser alert
             alert.Accept();
 
-            SetMethod_Ext.Clicks(_ClientSave);
+            CustomMehtods.Clicks(_ClientSave);
         }
     }
 }

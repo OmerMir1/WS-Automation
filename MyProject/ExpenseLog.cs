@@ -63,20 +63,20 @@ namespace MyProject
         [TestMethod]
         public void CreateNewExpenseEntry()
         {
-            SetMethod_Ext.Clicks(_ExpenseLogTab);
+            CustomMehtods.Clicks(_ExpenseLogTab);
             BasePage.driver.SwitchTo().Frame("f1");
-            SetMethod_Ext.Clicks(_ELNew);
-            SetMethod_Ext.Clicks(_ELEmpDD);
+            CustomMehtods.Clicks(_ELNew);
+            CustomMehtods.Clicks(_ELEmpDD);
             Thread.Sleep(1500);
-            SetMethod_Ext.Clicks(_ELEmp);
-            SetMethod_Ext.Clicks(_ELDateField);
-            SetMethod_Ext.Clicks(_ELDateSel);
-            SetMethod_Ext.Clicks(_ELProjectDD);
+            CustomMehtods.Clicks(_ELEmp);
+            CustomMehtods.Clicks(_ELDateField);
+            CustomMehtods.Clicks(_ELDateSel);
+            CustomMehtods.Clicks(_ELProjectDD);
             Thread.Sleep(1500);
-            SetMethod_Ext.Clicks(_ELProject);
-            SetMethod_Ext.Clicks(_ELExpDD);
+            CustomMehtods.Clicks(_ELProject);
+            CustomMehtods.Clicks(_ELExpDD);
             Thread.Sleep(1500);
-            SetMethod_Ext.Clicks(_ELExp);
+            CustomMehtods.Clicks(_ELExp);
             
             _ELUnits.SendKeys("10");
             Thread.Sleep(5000);
@@ -88,10 +88,10 @@ namespace MyProject
             //alert.Dismiss();
             _ELCost.SendKeys("22");
             
-            SetMethod_Ext.Clicks(_ELMore);            
-            SetMethod_Ext.Clicks(_ELApproveChkbx);
+            CustomMehtods.Clicks(_ELMore);            
+            CustomMehtods.Clicks(_ELApproveChkbx);
             Thread.Sleep(1500);
-            SetMethod_Ext.Clicks(_TESave);
+            CustomMehtods.Clicks(_TESave);
 
         }
     }

@@ -16,34 +16,34 @@ namespace MyProject
             BasePage.driver.Navigate().GoToUrl("http://demo.billquick.com");
 
             Pages.login.LogIn();
-            
-            //SetMethod_Ext.Hoover(Pages.listmenu._List, Pages.employee._employee );
+
+            //CustomMehtods.Hoover(Pages.listmenu._List, Pages.employee._employee );
             //Pages.employee.CreateNewEmp();
             //////string EID = empl._employeeID.GetAttribute("Value");  Get the Emp ID property value to pass that on to cleint and project.
 
 
-            //SetMethod_Ext.Hoover(Pages.listmenu._List, Pages.client._Client);
+            //CustomMehtods.Hoover(Pages.listmenu._List, Pages.client._Client);
             //Pages.client.CreateNewClient();
             //////// Cli.CreateNewClient(EID);          Fucntion call to Create a client with Emp ID passed for cleint manager
             ////////string CLID = Cli._ClientID.GetAttribute("value");
 
 
 
-            //SetMethod_Ext.Hoover(Pages.listmenu._List, Pages.project._ProjectTab);
-            //Pages.project.CreateNewProject();
+            CustomMehtods.Hoover(Pages.listmenu._List, Pages.project._ProjectTab);
+            Pages.project.CreateNewProject();
             ////Pro.CreateNewProject(CLID, EID);    Get the Client ID property value to pass that on to Project.
 
 
-            //SetMethod_Ext.Hoover(Pages.listmenu._Time, Pages.timeentry._TimeEntryTab);
+            //CustomMehtods.Hoover(Pages.listmenu._Time, Pages.timeentry._TimeEntryTab);
             //Pages.timeentry.CreateNewTimeEntry();
 
 
-            //SetMethod_Ext.Hoover(Pages.listmenu._Expense, Pages.expenseLog._ExpenseLogTab);
+            //CustomMehtods.Hoover(Pages.listmenu._Expense, Pages.expenseLog._ExpenseLogTab);
             //Pages.expenseLog.CreateNewExpenseEntry();
 
 
-            SetMethod_Ext.Hoover(Pages.listmenu._Billing, Pages.billingreview.BRTab);
-            Pages.billingreview.CreateNewInvoice();
+            //CustomMehtods.Hoover(Pages.listmenu._Billing, Pages.billingreview.BRTab);
+            //Pages.billingreview.CreateNewInvoice();
 
 
             BasePage.driver.Quit();

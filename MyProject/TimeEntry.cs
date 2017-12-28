@@ -2,7 +2,9 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium;
+
 using System.Threading;
+using OpenQA.Selenium.Support.UI;
 
 namespace MyProject
 {
@@ -54,29 +56,31 @@ namespace MyProject
         
 
         [FindsBy(How = How.Id, Using = "lnkSave")]
-        public IWebElement _TESave { get; set; }    
-        
-        
-     
+        public IWebElement _TESave { get; set; }
+
+
+
 
         [TestMethod]
         public void CreateNewTimeEntry()
         {
-                       
-            SetMethod_Ext.Clicks(_TimeEntryTab);
+
+            CustomMehtods.Clicks(_TimeEntryTab);
             BasePage.driver.SwitchTo().Frame("f1");
-            SetMethod_Ext.Clicks(_TENew);
-            SetMethod_Ext.Clicks(_TEEmpDD);
-            Thread.Sleep(1500);
-            SetMethod_Ext.Clicks(_TEEmp);
-            SetMethod_Ext.Clicks(_TEDateField);           
-            SetMethod_Ext.Clicks(_TEDateSel);
-            SetMethod_Ext.Clicks(_TEProjectDD);
-            Thread.Sleep(1500);
-            SetMethod_Ext.Clicks(_TEProject);
-            SetMethod_Ext.Clicks(_TEActDD);
-            Thread.Sleep(1500);
-            SetMethod_Ext.Clicks(_TEAct);
+            CustomMehtods.Clicks(_TENew);
+
+            CustomMehtods.Clicks(_TEEmpDD);
+            CustomMehtods.ElementToBeClickableAndClick(_TEEmp);            
+           
+            CustomMehtods.Clicks(_TEDateField);           
+            CustomMehtods.Clicks(_TEDateSel);
+
+            CustomMehtods.Clicks(_TEProjectDD);
+            CustomMehtods.ElementToBeClickableAndClick(_TEProject);
+            
+            CustomMehtods.Clicks(_TEActDD);
+            CustomMehtods.ElementToBeClickableAndClick(_TEAct);
+            
             _TEAHours.SendKeys("10");
             IWebElement element = BasePage.driver.FindElement(By.Id("chkBillable"));
             if (!element.Selected)
@@ -85,11 +89,13 @@ namespace MyProject
             }
 
         
-            SetMethod_Ext.Clicks(_TEMore);
-            Thread.Sleep(1500);
-            SetMethod_Ext.Clicks(_TEApproveChkbx);
-            Thread.Sleep(1500);
-            SetMethod_Ext.Clicks(_TESave);
+            CustomMehtods.Clicks(_TEMore);
+
+            CustomMehtods.ElementToBeClickableAndClick(_TEApproveChkbx);
+
+            CustomMehtods.ElementToBeClickableAndClick(_TESave);
+
+            
 
         }
     }
