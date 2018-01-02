@@ -62,9 +62,7 @@ namespace MyProject
 
         [TestMethod]
         public void CreateNewExpenseEntry()
-        {
-            CustomMehtods.Clicks(_ExpenseLogTab);
-            BasePage.driver.SwitchTo().Frame("f1");
+        {            
             CustomMehtods.Clicks(_ELNew);
             CustomMehtods.Clicks(_ELEmpDD);
             Thread.Sleep(1500);

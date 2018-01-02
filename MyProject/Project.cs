@@ -49,8 +49,8 @@ namespace MyProject
             [TestMethod]
             public void CreateNewProject()
             {
-                CustomMehtods.Clicks(_ProjectTab);
-                BasePage.driver.SwitchTo().Frame("f1");
+               
+               
                 CustomMehtods.Clicks(_ProjectNew);
                 CustomMehtods.EnterText(_ProjectCode, RandomGen.RandomG());
                 CustomMehtods.EnterText(_ProjectName, RandomGen.RandomG());

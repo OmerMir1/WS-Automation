@@ -31,10 +31,8 @@ namespace MyProject
         [TestMethod]
         public void CreateNewClient()
 
-        {
+        {           
             
-            CustomMehtods.Clicks(_Client);
-            BasePage.driver.SwitchTo().Frame("f1");
             CustomMehtods.Clicks(_ClientNew);
             CustomMehtods.EnterText(_ClientID, RandomGen.RandomG());
             _ClientMgrDD.Click();

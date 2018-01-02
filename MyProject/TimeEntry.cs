@@ -64,9 +64,7 @@ namespace MyProject
         [TestMethod]
         public void CreateNewTimeEntry()
         {
-
-            CustomMehtods.Clicks(_TimeEntryTab);
-            BasePage.driver.SwitchTo().Frame("f1");
+                    
             CustomMehtods.Clicks(_TENew);
 
             CustomMehtods.Clicks(_TEEmpDD);

@@ -73,10 +73,7 @@ namespace MyProject
         [TestMethod]
         public void CreateNewInvoice()
         {
-            CustomMehtods.Clicks(BRTab);
-            
-            BasePage.driver.SwitchTo().Frame("f1");
-            
+                        
             SelectElement ViewBy = new SelectElement(BRViewBy);
             ViewBy.SelectByIndex(1);
             CustomMehtods.Clicks(BRProjectFDD);

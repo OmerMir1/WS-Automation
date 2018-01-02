@@ -29,10 +29,9 @@ namespace MyProject
         public static void Hoover(IWebElement hoveron, IWebElement elementtoclick)
         {
             BasePage.driver.SwitchTo().DefaultContent();
-            Actions Hov = new Actions(BasePage.driver);
-            Hov.MoveToElement(hoveron).Build().Perform();
-            Thread.Sleep(1500);
-            elementtoclick.Click();
+            Hoover(hoveron);         
+            CustomMehtods.ElementToBeClickableAndClick(elementtoclick);            
+            BasePage.driver.SwitchTo().Frame("f1");
         }
 
 
@@ -41,7 +40,7 @@ namespace MyProject
 
             Actions Hov = new Actions(BasePage.driver);
             Hov.MoveToElement(hovero).Build().Perform();
-            Thread.Sleep(3000);
+            
 
         }
 

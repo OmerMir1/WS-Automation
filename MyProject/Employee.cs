@@ -46,12 +46,11 @@ namespace MyProject
 
          
 
-            [TestMethod]
+           
             public void CreateNewEmp()
             {
 
-            CustomMehtods.Clicks(_employee);                   //Custom mehtods start
-            BasePage.driver.SwitchTo().Frame("f1");
+            
             CustomMehtods.Clicks(_employeenew);
 
             CustomMehtods.EnterText(_employeeID, RandomGen.RandomG());
@@ -61,7 +60,7 @@ namespace MyProject
             CustomMehtods.Clicks(_RateTab);
             CustomMehtods.EnterText(_employeeBR, RandomGen.RandomG());
             CustomMehtods.EnterText(_employeeCR, RandomGen.RandomG());
-            CustomMehtods.Clicks(_employeeSave);                   //Custom mehtods end
+            CustomMehtods.Clicks(_employeeSave);                  
 
 
 
