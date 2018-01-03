@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
@@ -8,6 +10,12 @@ namespace MyProject
 {
     public class CustomMehtods
     {
+        [SetUp]
+        public static void NewWebdriverAndGoToUrl()
+        {
+            BasePage.driver = new ChromeDriver();
+            BasePage.driver.Navigate().GoToUrl("http://demo.billquick.com");
+        }
 
         public static void EnterText(IWebElement element, int value)    //Custom mehtods start, using a keyword this can turn these custom mthods in to extesnion methods of Iwebelemt wherein u can call the method as say _employeeFN.entertext instead of sendkeys.
         {

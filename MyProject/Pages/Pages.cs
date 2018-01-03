@@ -4,10 +4,10 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace MyProject
 {
-    [TestClass]
+    
     public class Pages
     {
-        [TestMethod]
+       
         public static T InitiandReturnPageObject<T>() where T : new()
         {
             var page = new T();

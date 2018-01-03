@@ -10,7 +10,7 @@ using System.Linq;
 
 namespace MyProject
 {
-    [TestClass]
+    
     public class BillingReview
     {
         
@@ -70,19 +70,19 @@ namespace MyProject
 
 
        
-        [TestMethod]
+       
         public void CreateNewInvoice()
         {
                         
             SelectElement ViewBy = new SelectElement(BRViewBy);
             ViewBy.SelectByIndex(1);
-            CustomMehtods.Clicks(BRProjectFDD);
-            Thread.Sleep(1500);
-            CustomMehtods.Clicks(BRProjectSelect);
+            CustomMehtods.Clicks(BRProjectFDD);            
+            CustomMehtods.ElementToBeClickableAndClick(BRProjectSelect);
+
             CustomMehtods.Clicks(BRProjectTDD);
-            Thread.Sleep(2100);
-            CustomMehtods.Clicks(BRProjectSelectSecond);
-            Thread.Sleep(500);
+            CustomMehtods.ElementToBeClickableAndClick(BRProjectSelectSecond);
+
+            //Thread.Sleep(500);
             SelectElement Period = new SelectElement(BRAsOf);
             Period.SelectByValue("All");     
 
@@ -120,7 +120,7 @@ namespace MyProject
            // Thread.Sleep(1000);
             CustomMehtods.Hoover(BRClickOnProcess);
            // SetMethod_Ext.Clicks(BRClickOnProcess);
-            Thread.Sleep(7000);
+            Thread.Sleep(1500);
             //WebDriverWait wait = new WebDriverWait(BasePage.driver, TimeSpan.FromSeconds(11));
             //wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("lnkProcessOption")));
            // SetMethod_Ext.Clicks(BRClickOnProcess);

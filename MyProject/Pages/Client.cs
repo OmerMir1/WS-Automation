@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace MyProject
 {
-    [TestClass]
+   
     public class Client
     {
         [FindsBy(How = How.Id, Using = "tab_client")]
@@ -28,16 +28,16 @@ namespace MyProject
         public IWebElement _ClientSave { get; set; }
 
        
-        [TestMethod]
+     
         public void CreateNewClient()
 
         {           
             
             CustomMehtods.Clicks(_ClientNew);
             CustomMehtods.EnterText(_ClientID, RandomGen.RandomG());
-            _ClientMgrDD.Click();
-            Thread.Sleep(3000);
-            _ClientManagerRow.Click();
+
+            _ClientMgrDD.Click();           
+            CustomMehtods.ElementToBeClickableAndClick(_ClientManagerRow);
 
             IAlert alert = BasePage.driver.SwitchTo().Alert();     //Hanldes the Browser alert
             alert.Accept();

@@ -7,8 +7,7 @@ using System.Threading;
 
 
 namespace MyProject
-{
-         [TestClass]    
+{  
          public class Project
         {
             [FindsBy(How = How.Id, Using = "tab_project")]
@@ -46,7 +45,7 @@ namespace MyProject
 
           
 
-            [TestMethod]
+            
             public void CreateNewProject()
             {
                

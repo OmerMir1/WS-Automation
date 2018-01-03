@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace MyProject
 {
-    [TestClass]
+   
     public class ExpenseLog
     {
         
@@ -60,36 +60,33 @@ namespace MyProject
 
        
 
-        [TestMethod]
+
         public void CreateNewExpenseEntry()
         {            
             CustomMehtods.Clicks(_ELNew);
             CustomMehtods.Clicks(_ELEmpDD);
-            Thread.Sleep(1500);
-            CustomMehtods.Clicks(_ELEmp);
+          
+            CustomMehtods.ElementToBeClickableAndClick(_ELEmp);
             CustomMehtods.Clicks(_ELDateField);
             CustomMehtods.Clicks(_ELDateSel);
-            CustomMehtods.Clicks(_ELProjectDD);
-            Thread.Sleep(1500);
-            CustomMehtods.Clicks(_ELProject);
+
+            CustomMehtods.Clicks(_ELProjectDD);           
+            CustomMehtods.ElementToBeClickableAndClick(_ELProject);
+
             CustomMehtods.Clicks(_ELExpDD);
-            Thread.Sleep(1500);
-            CustomMehtods.Clicks(_ELExp);
+            CustomMehtods.ElementToBeClickableAndClick(_ELExp);
             
             _ELUnits.SendKeys("10");
             Thread.Sleep(5000);
-            _ELCost.Clear();
-            
-         
+            _ELCost.Clear();         
 
-            //IAlert alert = BasePage.driver.SwitchTo().Alert();
-            //alert.Dismiss();
+           
             _ELCost.SendKeys("22");
             
             CustomMehtods.Clicks(_ELMore);            
             CustomMehtods.Clicks(_ELApproveChkbx);
-            Thread.Sleep(1500);
-            CustomMehtods.Clicks(_TESave);
+            
+            CustomMehtods.ElementToBeClickableAndClick(_TESave);
 
         }
     }

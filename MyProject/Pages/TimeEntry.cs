@@ -8,7 +8,7 @@ using OpenQA.Selenium.Support.UI;
 
 namespace MyProject
 {
-    [TestClass]
+    
     public class TimeEntry
     {
         [FindsBy(How = How.Id, Using = "tab_sheetview")]
@@ -61,7 +61,7 @@ namespace MyProject
 
 
 
-        [TestMethod]
+        
         public void CreateNewTimeEntry()
         {
                     
