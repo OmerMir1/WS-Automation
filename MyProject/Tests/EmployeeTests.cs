@@ -13,6 +13,8 @@ namespace MyProject.Tests
             Pages.login.LogIn();
             CustomMehtods.Hoover(Pages.listmenu._List, Pages.employee._employee);
             Pages.employee.CreateNewEmp();
+
+            BasePage.driver.Quit();
         }
     }
 }

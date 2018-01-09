@@ -49,27 +49,14 @@ namespace MyProject
            
             public void CreateNewEmp()
         {             
-            CustomMehtods.Clicks(_employeenew);
+            _employeenew.Click();
             CustomMehtods.EnterText(_employeeID, RandomGen.RandomG());           
             CustomMehtods.EnterText(_employeeFN, RandomGen.RandomG());
             CustomMehtods.EnterText(_employeeLN, RandomGen.RandomG());
-            CustomMehtods.Clicks(_RateTab);
+            _RateTab.Click();
             CustomMehtods.EnterText(_employeeBR, RandomGen.RandomG());
             CustomMehtods.EnterText(_employeeCR, RandomGen.RandomG());
-            CustomMehtods.Clicks(_employeeSave);    
-
-            //    _employee.Click();
-            //    BasePage.driver.SwitchTo().Frame("f1");
-            //    _employeenew.Click();
-
-            //_employeeID.EnterText("2");
-            //    _employeeFN.SendKeys("Omer");
-            //    _employeeLN.SendKeys("Mir");
-            //    _RateTab.Click();
-
-            //_employeeBR.SendKeys("10");
-            //    _employeeCR.SendKeys("5");
-            //_employeeSave.Click();
+            _employeeSave.Click();    
 
         }
         }

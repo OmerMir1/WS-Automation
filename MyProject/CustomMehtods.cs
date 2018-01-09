@@ -38,7 +38,7 @@ namespace MyProject
         {
             BasePage.driver.SwitchTo().DefaultContent();
             Hoover(hoveron);         
-            CustomMehtods.ElementToBeClickableAndClick(elementtoclick);            
+            CustomMehtods.WaitAndClick(elementtoclick);            
             BasePage.driver.SwitchTo().Frame("f1");
         }
 
@@ -86,7 +86,7 @@ namespace MyProject
             return elementToBeSelected;
         }
 
-        public static void ElementToBeClickableAndClick(IWebElement e)
+        public static void WaitAndClick(IWebElement e)
         {
             WebDriverWait w = new WebDriverWait(BasePage.driver, TimeSpan.FromMinutes(1));
             w.Until(ExpectedConditions.ElementToBeClickable(e));

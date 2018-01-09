@@ -91,7 +91,6 @@
     <Compile Include="Tests\TimeEntryTests.cs" />
     <Compile Include="Tests\ExpenseLogTests.cs" />
     <Compile Include="Tests\BillingReviewTests.cs" />
-    <Compile Include="Tests\UnitTest1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

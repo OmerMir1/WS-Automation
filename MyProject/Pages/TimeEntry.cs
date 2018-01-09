@@ -1,14 +1,9 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium.Support.PageObjects;
+﻿using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium;
-
-using System.Threading;
-using OpenQA.Selenium.Support.UI;
 
 namespace MyProject
 {
-    
+
     public class TimeEntry
     {
         [FindsBy(How = How.Id, Using = "tab_sheetview")]
@@ -38,15 +33,15 @@ namespace MyProject
         [FindsBy(How = How.Id, Using = "lstActivity")]
         public IWebElement _TEActDD { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//*[@id='divFullList']/div/table/tbody/tr[2]/td[2]")]
-        public IWebElement _TEAct { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//*[@id='divFullList']/div/table/tbody/tr[5]/td[2]")]
+        public IWebElement _TEAct { get; set; }   
 
         [FindsBy(How = How.Id, Using = "txtaHours")]
         public IWebElement _TEAHours { get; set; }
 
-        //[FindsBy(How = How.Id, Using = "chkBillable")]
-        //public IWebElement _TEBillable { get; set; }
-        
+        [FindsBy(How = How.Id, Using = "chkBillable")]
+        public IWebElement _TEBillable { get; set; }
+
 
         [FindsBy(How = How.XPath, Using = ".//*[@id='lblMore']")]
         public IWebElement _TEMore { get; set; }
@@ -65,35 +60,38 @@ namespace MyProject
         public void CreateNewTimeEntry()
         {
                     
-            CustomMehtods.Clicks(_TENew);
+            _TENew.Click();
 
-            CustomMehtods.Clicks(_TEEmpDD);
-            CustomMehtods.ElementToBeClickableAndClick(_TEEmp);            
+            _TEEmpDD.Click();
+            CustomMehtods.WaitAndClick(_TEEmp);            
            
-            CustomMehtods.Clicks(_TEDateField);           
-            CustomMehtods.Clicks(_TEDateSel);
+            _TEDateField.Click();           
+            _TEDateSel.Click();
 
-            CustomMehtods.Clicks(_TEProjectDD);
-            CustomMehtods.ElementToBeClickableAndClick(_TEProject);
+            _TEProjectDD.Click();
+            CustomMehtods.WaitAndClick(_TEProject);
             
-            CustomMehtods.Clicks(_TEActDD);
-            CustomMehtods.ElementToBeClickableAndClick(_TEAct);
+            _TEActDD.Click();
+            CustomMehtods.WaitAndClick(_TEAct);
             
             _TEAHours.SendKeys("10");
-            IWebElement element = BasePage.driver.FindElement(By.Id("chkBillable"));
-            if (!element.Selected)
+            
+            if (!_TEBillable.Selected)
             {
-                element.Click();
+                _TEBillable.Click();
             }
 
         
-            CustomMehtods.Clicks(_TEMore);
+            _TEMore.Click();
 
-            CustomMehtods.ElementToBeClickableAndClick(_TEApproveChkbx);
+            CustomMehtods.WaitAndClick(_TEApproveChkbx);
 
-            CustomMehtods.ElementToBeClickableAndClick(_TESave);
+            CustomMehtods.WaitAndClick(_TESave);
 
-            
+            IAlert alert = BasePage.driver.SwitchTo().Alert();     //Hanldes the Browser alert
+            alert.Accept();
+
+
 
         }
     }

@@ -15,6 +15,9 @@ namespace MyProject.Tests
 
             CustomMehtods.Hoover(Pages.listmenu._Time, Pages.timeentry._TimeEntryTab);
             Pages.timeentry.CreateNewTimeEntry();
+
+            BasePage.driver.Quit();
+            
         }
     }
 }

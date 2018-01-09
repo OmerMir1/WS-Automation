@@ -37,12 +37,12 @@ namespace MyProject
             CustomMehtods.EnterText(_ClientID, RandomGen.RandomG());
 
             _ClientMgrDD.Click();           
-            CustomMehtods.ElementToBeClickableAndClick(_ClientManagerRow);
+            CustomMehtods.WaitAndClick(_ClientManagerRow);
 
             IAlert alert = BasePage.driver.SwitchTo().Alert();     //Hanldes the Browser alert
             alert.Accept();
 
-            CustomMehtods.Clicks(_ClientSave);
+            _ClientSave.Click();
         }
     }
 }

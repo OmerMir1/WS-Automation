@@ -15,6 +15,8 @@ namespace MyProject.Tests
 
             CustomMehtods.Hoover(Pages.listmenu._Billing, Pages.billingreview.BRTab);
             Pages.billingreview.CreateNewInvoice();
+
+            BasePage.driver.Quit();
         }
     }
 }

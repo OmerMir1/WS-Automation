@@ -63,18 +63,18 @@ namespace MyProject
 
         public void CreateNewExpenseEntry()
         {            
-            CustomMehtods.Clicks(_ELNew);
-            CustomMehtods.Clicks(_ELEmpDD);
+            _ELNew.Click();
+            _ELEmpDD.Click();
           
-            CustomMehtods.ElementToBeClickableAndClick(_ELEmp);
-            CustomMehtods.Clicks(_ELDateField);
-            CustomMehtods.Clicks(_ELDateSel);
+            CustomMehtods.WaitAndClick(_ELEmp);
+            _ELDateField.Click();
+            _ELDateSel.Click();
 
-            CustomMehtods.Clicks(_ELProjectDD);           
-            CustomMehtods.ElementToBeClickableAndClick(_ELProject);
+            _ELProjectDD.Click();           
+            CustomMehtods.WaitAndClick(_ELProject);
 
-            CustomMehtods.Clicks(_ELExpDD);
-            CustomMehtods.ElementToBeClickableAndClick(_ELExp);
+            _ELExpDD.Click();
+            CustomMehtods.WaitAndClick(_ELExp);
             
             _ELUnits.SendKeys("10");
             Thread.Sleep(5000);
@@ -83,10 +83,10 @@ namespace MyProject
            
             _ELCost.SendKeys("22");
             
-            CustomMehtods.Clicks(_ELMore);            
-            CustomMehtods.Clicks(_ELApproveChkbx);
+            _ELMore.Click();            
+            _ELApproveChkbx.Click();
             
-            CustomMehtods.ElementToBeClickableAndClick(_TESave);
+            CustomMehtods.WaitAndClick(_TESave);
 
         }
     }

@@ -7,7 +7,7 @@ using NUnit.Framework;
 namespace MyProject
 {
     [TestClass]
-    class BillingCycleTest
+    public class BillingCycleTest
     {
        
         [TestMethod]

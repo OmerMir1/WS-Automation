@@ -14,6 +14,8 @@ namespace MyProject.Tests
 
             CustomMehtods.Hoover(Pages.listmenu._Expense, Pages.expenseLog._ExpenseLogTab);
             Pages.expenseLog.CreateNewExpenseEntry();
+
+            BasePage.driver.Quit();
         }
     }
 }

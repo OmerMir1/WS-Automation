@@ -14,6 +14,8 @@ namespace MyProject.Tests
 
             CustomMehtods.Hoover(Pages.listmenu._List, Pages.project._ProjectTab);
             Pages.project.CreateNewProject();
+
+            BasePage.driver.Quit();
         }
     }
 }

@@ -50,22 +50,22 @@ namespace MyProject
             {
                
                
-                CustomMehtods.Clicks(_ProjectNew);
+                _ProjectNew.Click();
                 CustomMehtods.EnterText(_ProjectCode, RandomGen.RandomG());
                 CustomMehtods.EnterText(_ProjectName, RandomGen.RandomG());
 
                 _ProjectClientDD.Click();
-                CustomMehtods.ElementToBeClickableAndClick(_ProjectClient);
+                CustomMehtods.WaitAndClick(_ProjectClient);
             
                 _ProjectManagerDD.Click();
-                CustomMehtods.ElementToBeClickableAndClick(_ProjectManager);
+                CustomMehtods.WaitAndClick(_ProjectManager);
             
                 SelectElement Manager = new SelectElement(_ProjectContractType);
                 Manager.SelectByText("Fixed");
 
                 _ProjectContractAmt.Click();
                 _ProjectContractAmt.SendKeys("1000");
-                CustomMehtods.Clicks(_ProjectSave);
+                _ProjectSave.Click();
             }
         }
     }

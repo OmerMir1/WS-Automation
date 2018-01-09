@@ -76,17 +76,17 @@ namespace MyProject
                         
             SelectElement ViewBy = new SelectElement(BRViewBy);
             ViewBy.SelectByIndex(1);
-            CustomMehtods.Clicks(BRProjectFDD);            
-            CustomMehtods.ElementToBeClickableAndClick(BRProjectSelect);
+            BRProjectFDD.Click();            
+            CustomMehtods.WaitAndClick(BRProjectSelect);
 
-            CustomMehtods.Clicks(BRProjectTDD);
-            CustomMehtods.ElementToBeClickableAndClick(BRProjectSelectSecond);
+            BRProjectTDD.Click();
+            CustomMehtods.WaitAndClick(BRProjectSelectSecond);
 
             //Thread.Sleep(500);
             SelectElement Period = new SelectElement(BRAsOf);
             Period.SelectByValue("All");     
 
-            CustomMehtods.Clicks(BRRefresh);
+            BRRefresh.Click();
             Thread.Sleep(1501);
             var CW = BasePage.driver.CurrentWindowHandle;
             foreach(string window in BasePage.driver.WindowHandles)
@@ -98,18 +98,18 @@ namespace MyProject
             BasePage.driver.SwitchTo().Window(CW);
             BasePage.driver.SwitchTo().Frame("f1");
             Thread.Sleep(550);
-            CustomMehtods.Clicks(BRDetailsOption);
-            CustomMehtods.Clicks(BRWUDWindowClick);
+            BRDetailsOption.Click();
+            BRWUDWindowClick.Click();
             Thread.Sleep(900);
             foreach (string window in BasePage.driver.WindowHandles)
             {
                 BasePage.driver.SwitchTo().Window(window);
             }
 
-            CustomMehtods.Clicks(BRSelectAllToApplyWUD);
+            BRSelectAllToApplyWUD.Click();
             BREnterWUD.SendKeys("50");
-            CustomMehtods.Clicks(BRWUDUpdate);
-            CustomMehtods.Clicks(BRCloseWUDWindow);
+            BRWUDUpdate.Click();
+            BRCloseWUDWindow.Click();
             Thread.Sleep(1001);
             BasePage.driver.SwitchTo().Window(CW);
             BasePage.driver.SwitchTo().Frame("f1");
@@ -126,7 +126,7 @@ namespace MyProject
            // SetMethod_Ext.Clicks(BRClickOnProcess);
            // SetMethod_Ext.Clicks(BRClickOnProcess);
            // Thread.Sleep(10000);
-            CustomMehtods.Clicks(BRProcessAsFinal);
+            BRProcessAsFinal.Click();
 
         }
     }
